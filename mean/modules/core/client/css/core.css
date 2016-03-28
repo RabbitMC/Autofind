@@ -40,10 +40,12 @@ a:hover .header-profile-image {
   text-align: left;
   margin-top: 20px;
 }
-
 .home-cars img{
     width: 262px;
     height: 165px;
     border: 1px #ccc solid;
     padding: 5px;
+}
+.cars {
+    margin-bottom: 20px;
 }
