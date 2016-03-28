@@ -10,12 +10,18 @@ var mongoose = require('mongoose'),
  * Carfind Schema
  */
 var CarfindSchema = new Schema({
+  title: {
+    type: String,
+    default: 'New Listing',
+    trim: true,
+    required: 'Choose a title' 
+  },
   type: {
     type: String,
     default: 'used',
     trim: true
   },
- make: {
+  make: {
     type: String,
     default: '',
     trim: true,
@@ -26,6 +32,14 @@ var CarfindSchema = new Schema({
     default: '',
     trim: true,
     required: 'Choose a model' 
+  },
+  year: {
+    type: String,
+    default: ''
+  },
+  price: {
+    type: String,
+    default: ''
   },
   state: {
     type: String,
