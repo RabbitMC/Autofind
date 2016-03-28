@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Carfinds</h1>
+  </div>
+  <div class="list-group">
+    <a data-ng-repeat="carfind in vm.carfinds"
+       data-ui-sref="carfinds.view({ carfindId: carfind._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span data-ng-bind="carfind.created | date:'mediumDate'"></span>
+        by
+        <span data-ng-if="carfind.user" data-ng-bind="carfind.user.displayName"></span>
+        <span data-ng-if="!carfind.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" data-ng-bind="carfind.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" data-ng-if="vm.carfinds.$resolved && !vm.carfinds.length">
+    No Carfinds yet, why don't you <a data-ui-sref="carfinds.create">create one</a>?
+  </div>
+</section>
